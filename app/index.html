@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Sunset Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Neon Sunset Cover Studio</h1>
+    <p class="tag">Your photo, three diagonal panels, bold lettering — a poster-style cover in one click.</p>
+
+    <fieldset>
+      <legend>Photos — one per panel</legend>
+      <label>Panel 1 <span class="row"><input id="photo0" type="file" accept="image/*"><button id="sample0" type="button">Sample</button></span></label>
+      <label>Panel 2 <span class="row"><input id="photo1" type="file" accept="image/*"><button id="sample1" type="button">Sample</button></span></label>
+      <label>Panel 3 <span class="row"><input id="photo2" type="file" accept="image/*"><button id="sample2" type="button">Sample</button></span></label>
+      <button id="onephoto" type="button">One photo in all panels</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Selected panel — click it on the cover</legend>
+      <div class="btnrow">
+        <button type="button" data-panel="0" class="on">Panel 1</button>
+        <button type="button" data-panel="1">Panel 2</button>
+        <button type="button" data-panel="2">Panel 3</button>
+      </div>
+      <label>Zoom <input id="zoom" type="range" min="1" max="3" step="0.05" value="1"></label>
+      <label>Pan left–right <input id="panx" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <label>Pan up–down <input id="pany" type="range" min="-1" max="1" step="0.01" value="0"></label>
+      <button id="resetCrop" type="button">Reset crop</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Layout</legend>
+      <div class="btnrow">
+        <button type="button" data-layout="diagonal" class="on">Diagonal</button>
+        <button type="button" data-layout="hero">Hero + Duo</button>
+        <button type="button" data-layout="triptych">Triptych</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Caption</legend>
+      <label>Caption <input id="caption" type="text" maxlength="32" value="Sunset Heist"></label>
+      <label>Tagline <input id="tagline" type="text" maxlength="48" value="A Neon Sunset Story"></label>
+      <label>Caption size <input id="capscale" type="range" min="0.6" max="1.4" step="0.05" value="1"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Style</legend>
+      <div class="btnrow">
+        <button type="button" data-theme="sunset" class="on">Sunset</button>
+        <button type="button" data-theme="neon">Neon Night</button>
+        <button type="button" data-theme="teal">Teal Dusk</button>
+        <button type="button" data-theme="mono">Noir</button>
+      </div>
+      <label>Grade strength <input id="grade" type="range" min="0" max="1" step="0.05" value="0.8"></label>
+      <label class="check"><input id="halftone" type="checkbox" checked> Halftone shading</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Export</legend>
+      <div class="btnrow">
+        <button type="button" data-size="square" class="on">1080 x 1080</button>
+        <button type="button" data-size="portrait">1080 x 1350</button>
+        <button type="button" data-size="wide">1920 x 1080</button>
+      </div>
+      <button id="export" type="button" class="big">Export PNG</button>
+      <p id="status" role="status">Photos stay on your machine — nothing is uploaded.</p>
+    </fieldset>
+  </section>
+  <section class="preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+    <p class="hint">Click a panel to select it — drag to move its photo, scroll to zoom.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

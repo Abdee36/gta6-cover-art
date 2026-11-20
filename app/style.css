@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('./fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('./fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+html, body { margin: 0; min-height: 100%; background: #140a20; color: #f2ecf7; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 16px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-family: 'Anton', 'Arial Narrow', sans-serif; font-size: 30px; letter-spacing: 0.5px; color: #ffd76a; }
+.tag { margin: 0; color: #b9a8c9; }
+fieldset { border: 1px solid #3a2a52; border-radius: 10px; padding: 12px; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+legend { font-weight: 700; color: #ffd76a; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; }
+label.check { flex-direction: row; align-items: center; gap: 8px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row input[type=file] { flex: 1; min-width: 0; }
+input[type=text] { font: inherit; padding: 8px; border: 1px solid #4a3a63; border-radius: 6px; background: #1e1229; color: #f2ecf7; }
+input[type=range] { width: 100%; accent-color: #ff5e3a; }
+button { font: inherit; font-weight: 700; padding: 8px 10px; border: 1px solid #4a3a63; border-radius: 6px; background: #241534; color: #f2ecf7; cursor: pointer; }
+button:hover { border-color: #ff5e3a; }
+button.on { background: #ff5e3a; border-color: #ff5e3a; color: #fff; }
+.btnrow { display: flex; gap: 6px; flex-wrap: wrap; }
+.btnrow button { flex: 1; }
+button.big { background: #ff5e3a; border-color: #ff5e3a; color: #fff; font-size: 17px; padding: 12px; }
+#status { margin: 0; color: #b9a8c9; font-size: 13px; }
+.preview { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+#cover { width: min(72vh, 62vw); height: auto; max-height: 86vh; object-fit: contain; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); cursor: grab; background: #160a24; }
+#cover:active { cursor: grabbing; }
+.hint { margin: 0; color: #b9a8c9; font-size: 13px; text-align: center; }
+body.shot-cover { background: #160a24; }
+body.shot-cover .controls, body.shot-cover .hint { display: none; }
+body.shot-cover .app { padding: 0; height: 100vh; align-items: center; }
+body.shot-cover .preview { position: static; }
+body.shot-cover #cover { box-shadow: none; }
